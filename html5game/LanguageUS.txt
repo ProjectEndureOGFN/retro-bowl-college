@@ -40,12 +40,12 @@ quarter_2	2nd Qtr
 quarter_3	3rd Qtr
 quarter_4	4th Qtr
 quarter_5	OT
-match_Touchdown	Touchdown
-match_Interception	Interception
-match_Incomplete	Incomplete
+match_Touchdown	Its COMPLETE!
+match_Interception	Its PICKED OFF
+match_Incomplete	It was DROPPED
 match_OutOfBounds	Out of bounds
 match_Sacked	Sacked
-match_Fumble	Fumble
+match_Fumble	Its dropped!
 comm_stage_KickOff	$teamname kicks off
 comm_stage_Possession_OwnHalf1	$teamname on their own $num
 comm_stage_Possession_OwnHalf2	$teamname in their own half
@@ -71,11 +71,11 @@ comm_stage_DrivePass4	The quarterback throws it
 comm_stage_DriveHailMary0	It's a hail mary throw
 comm_stage_DriveHailMary1	It's a huge throw
 comm_stage_DriveHailMary2	The quarterback airs it out
-comm_stage_Turnover_Fumble	It's a fumble!
-comm_stage_Turnover_Interception	Interception!
+comm_stage_Turnover_Fumble THE BALL IS DROPPED!
+comm_stage_Turnover_Interception	Its Picked Off!
 comm_stage_Turnover_Sack	The quarterback is sacked!
 comm_stage_TurnoverHuman	$teamname turn it over
-comm_stage_TurnoverHuman4th	$teamname turn it over on 4th down
+comm_stage_TurnoverHuman4th	$teamname Couldn't convert on a 4th down!
 comm_stage_Touchdown	$teamname score!
 comm_stage_Punt	$teamname punt
 comm_stage_PAT1	Point after touchdown...
@@ -184,7 +184,7 @@ Punt	Punt
 Field Goal	Field Goal
 msg_NewGame	Do you want to start a new career?##WARNING!#Your save data and any existing#Coaching Credits will be lost.
 msg_NewGameCredits	Do you want to start a new career?##You have $num of your purchased Coaching Credits remaining that will be transferred to your new save file.
-matchmsg_PlayPunt	Play 4th down or punt?
+matchmsg_PlayPunt	Go for it or punt?
 matchmsg_PlayFG	Play $down or go for field goal?
 ui_NewTrait	New Trait!
 msg_NewTrait	You have earned a new trait!###$traitname##$traitdesc.
@@ -234,7 +234,7 @@ match_Tipped	Tipped
 match_Dropped	Dropped
 msg_NewSeason	A new season begins!
 match_Recovered	Recovered
-match_Turnover	Turnover
+match_Turnover	They couldn't convert 4th down
 match_Safety	Safety
 matchmsg_PATor2	1 or 2 point conversion?
 match_1pt	1 pt
@@ -412,7 +412,7 @@ ui_Credit	Credit
 ui_Facilities	Facilities
 ui_Fans	Fans
 ui_Fan	Fan
-ui_Stadium	Stadium
+ui_Stadium	Stands
 ui_Staff	Staff
 ui_TrainingFacilities	Training Facilities
 ui_StaffFacilities	Staff Facilities
@@ -584,7 +584,7 @@ ui_FavoriteTeam	Favorite Team
 ui_YourName	Your Name
 ui_FirstName	First Name
 ui_LastName	Last Name
-ui_NewCareer	New Career
+ui_NewCareer	Head Coach Career
 news_NewCareer	With just $num $weeks left in the regular season $teamname have appointed $coachname as their new head coach.##$lname has worked at the college level for several years and was excelling as the head coach of $randomcollegename before taking the reins at $teamname.
 ui_StartWithFave	Start with favorite team?
 msg_Intro_1	Welcome to $teamname!##This is your home screen. You can tap on the division table to view divisions and the schedule.##When you are ready tap the F.OFFICE button.
@@ -625,7 +625,7 @@ injurytype_9	Calf
 injurytype_10	Ankle
 injurytype_11	Foot
 ui_SkipTutorial	Skip Tutorial
-ui_Credits	Design & Code by Simon Read      ***      Art by @pixelnfl      ***      Music by Heatley Bros      ***      Special thanks to John Holden, @MrSpecialK_, Will Thompson and Five Aces      ***      Also a huge thank you to all the league organizers and players!
+ui_Credits	Game by New Star Games      ***      Modded by Gamer Cat      ***      I got hungy      ***      Uhhhhhh      ***      Idk what to put here
 match_TooLow	Too Low
 match_Doink	Doink
 ui_WeatherFX	Weather FX
@@ -780,20 +780,20 @@ ui_Close	Close
 btn_RestorePurchases	Restore#Purchases
 ui_Connecting	Connecting...
 ui_FavouriteTeam	Favorite Team
-msg_Welcome_CO	Welcome to Retro Bowl College!##You are about to start your first season as the head coach of a college football team.##The path to success is an arduous one but if you believe in yourself and can inspire your team then glory awaits!#
+msg_Welcome_CO	Welcome to Retro Bowl Highschool!##You are about to start your first season as the head coach of a Highschool/College football team.##The path to success is an arduous one but if you believe in yourself and can inspire your team then glory awaits!#
 
 msg_Welcome	Welcome to Retro Bowl!##You are about to start your first season as the head coach of a pro football team.##The path to success is an arduous one but if you believe in yourself and can inspire your team then glory awaits!#
 msg_LimitedVersion	*** Limited Version - $num games remaining ***
 ui_Tip	Tip
 ui_Tips	Tips
-tip_1	Tired players are more likely to fumble the ball
-tip_2	Upgrading your rehab facility will improve energy recovery
-tip_3	After year 2 it is possible to get job offers from other teams
-tip_4	Toxic players bring down the attitudes of team mates after a loss
-tip_5	Players tire more as the season goes on
-tip_6	Strong players produce more stiff arms in a game
-tip_7	Upgrading your stadium will give the fans an immediate boost
-tip_8	Your quarterback's throwing range depletes during a game according to his stamina
+tip_1	Play Better
+tip_2	Modded with love from West Lauderdale
+tip_3	Now made with 20% more bugs!
+tip_4	Very cool mods
+tip_5	Fun Fact: The MISSHSAA Was the first league added!
+tip_6	チャールズはとても良い子です
+tip_7	Very cool game
+tip_8	Update: Changed the Price for Scholarship fund from 100 credits to 5
 tip_9	Diving to the ground or running out of bounds will protect against fumbles
 tip_10	Tired players will lose morale
 tip_11	Some coaches have traits that can give the team a boost
@@ -835,8 +835,8 @@ ui_ChooseFace	Choose Face
 msg_ChooseFace	Choose your own profile image!
 ui_Uniforms	Uniforms
 btn_Uniforms	Change#Uniforms
-msg_TickerTwitter	Follow @retro_bowl on Twitter
-msg_TickerReddit	Join us on Reddit! r/RetroBowl
+msg_TickerTwitter	I sleepy...
+msg_TickerReddit	This game has been recoded 12 different times.
 msg_NextGame	Next game: $teamname1 at $teamname2
 ui_VisitKong	Visit Kongregate.com
 ui_min1	1 Min
@@ -1350,10 +1350,9 @@ msg_JobOffers_QB_4	Your wealth of experience and knowledge of the game make you 
 
 msg_NegotiateNo_TooLong	The owner does not want to extend your contract this season.
 msg_NegotiateNo_TooEarly	The owner does not want to negotiate a new contract this early in the season.
-msg_AgentRequestContract	Your agent informs you that $teamname would be will to discuss a contract extension.
-
+msg_AgentRequestContract	Your agent informs you that $teamname would be will to discuss a contract 
 ui_Version_Mode	Franchise
-ui_CO_Label	College
+ui_CO_Label	Highschool
 ui_QB_Label	Quarterback
 ui_FR_Label	Franchise
 
