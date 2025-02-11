@@ -8,7 +8,7 @@ msg_co_draft_nottrydraft_y3	$playername ($position) (Ju) is not declaring for th
 msg_co_draft_early_y3	$playername ($position) (Ju) feels like he is ready to declare for the draft early! Do you want to encourage him to declare?##You can receive double the donations to the Scholarship Fund for players who declare early.##If you don't encourage him he will return to the team to play for the next season.
 
 ui_DraftCollege	Pro#Draft
-msg_TimeForProDraft	The College football season is over and your Senior and Junior star players are preparing to declare for the Pro Draft.
+msg_TimeForProDraft	The football season is over and your Senior and Junior star players are preparing to declare for the Pro Draft.
 
 ui_ExceedRecruitmentCredits	There is not enough left in the Scholarship Fund to recruit $playername.##You have $$num,000 remaining.
 
@@ -29,8 +29,8 @@ msg_NewSeasonCollege_Zero	A new season begins!
 
 msg_MeetingGPANotNeeded	The academic tutor believes that $playername is already attaining the highest possible GPA he can achieve.
 
-ui_Major	MAJOR
-ui_Minor	MINOR
+ui_Major	University
+ui_Minor	High School
 ui_OrientationWeek	CAMPUS SOCIETY
 ui_Hometown	HOMETOWN
 
@@ -268,7 +268,7 @@ ui_beat	beat
 
 ui_TradePlayer	Cut Player
 ui_Draft	Freshman#Admiss'ns
-ui_DraftRound	College Admissions
+ui_DraftRound	Team Admissions
 ui_SignPlayer	Recruit Player
 msg_SignPlayer	Do you want to recruit $position $playername?
 msg_SignRookie	Do you want to recruit Freshman $playername as a $position?
@@ -277,15 +277,15 @@ msg_CannotSign2	You already have $num players for the $position position.##You w
 ui_Sign	Recruit
 info_StarPlayers	These are your key players - the student athletes that make a real difference on game day. You can have up to 10 key players. (You can increase the limit to 12 players in the options if you prefer, and increase the upper limit of the Scholarship Fund at the same time.)##The rest of your squad do not have star ratings and are hidden. Their contribution towards the overall offense and defense ratings is dependent on the coordinator ratings.
 info_StarPlayers12	These are your key players - the student athletes that make a real difference on game day. You can have up to 12 key players.##The rest of your squad do not have star ratings and are hidden. Their contribution towards the overall offense and defense ratings is dependent on the coordinator ratings.
-info_Draft	It's time for College Admissions! You can spend the institution's Football SCHOLARSHIP FUND to recruit new Freshmen athletes to replace any key players who left at the end of the previous year.##Choose wisely! You will need to scout players in order to reveal more details about them, and each time you recruit a new athlete the number of remaining prospects will be reduced.##Once recruiting is over you will not be able to choose any more new players until the start of next year's season!
+info_Draft	It's time for Team Admissions! You can spend the institution's Football SCHOLARSHIP FUND to recruit new Freshmen athletes to replace any key players who left at the end of the previous year.##Choose wisely! You will need to scout players in order to reveal more details about them, and each time you recruit a new athlete the number of remaining prospects will be reduced.##Once recruiting is over you will not be able to choose any more new players until the start of next year's season!
 info_Draft2	New Admissions Rules!##You now need to scout Freshman players if you wish to reveal their potential. You do this via their profile page. The number of players you can scout per admissions process is limited.
 ui_FreeAgents	Walk-On Athlete
 news_PlayerRetiringNoTag	$position $playername will graduate at the end of the season. He is not tagged for the Yearbook.
 news_PlayerRetiringTag	$position $playername will graduate at the end of the season. You have already tagged him for the Yearbook.
 msg_ClearFreeAgent	This potential Walk-On will not take up College Football and will permanently go back to his studies. Are you sure you want to proceed?
-info_Facility_Stadium	Increase the upper limit of the College's Football SCHOLARSHIP FUND so that you can keep more donations when your players get drafted.##Improve your institution's stadium to make fans more positive after a win and less negative after a loss.##Higher quality training facilities help players gain XP faster.##Better rehab helps players maintain good condition and recover from injury quicker.
-ui_FrontOffice	Athletics Office
-btn_FrontOffice	Athletics#Office
+info_Facility_Stadium	Increase the upper limit of the Football SCHOLARSHIP FUND so that you can keep more donations when your players get drafted.##Improve your institution's stadium to make fans more positive after a win and less negative after a loss.##Higher quality training facilities help players gain XP faster.##Better rehab helps players maintain good condition and recover from injury quicker.
+ui_FrontOffice	Field House
+btn_FrontOffice	Field#House
 postmatch_toxic1	$position $playername has received a warning for a uniform violation ($uniform).-choice_DefendPlayer-choice_CriticisePlayer
 postmatch_toxic2	$position $playername has received a warning for unnecessary roughness.-choice_CriticisePlayer-choice_CriticiseOfficials
 postmatch_toxic3	$position $playername has received a warning for unsportsmanlike conduct.-choice_CriticisePlayer-choice_CriticiseCoaches
@@ -303,7 +303,7 @@ choice_PraiseOwner	Praise#Faculty
 choice_FocusOwner	Athletic#Director
 news_DraftEnded	The Freshman players have arrived at college and the season can begin!
 news_SignFreeAgent	$playername has joined the $teamname football team as a walk-on.
-ui_FavoriteTeam	Favorite College
+ui_FavoriteTeam	Favorite Team
 news_NewCareer	With just $num $weeks left in the season $teamname have appointed $coachname as their new head coach.##No one knows what to expect from this untested new arrival!
 msg_Intro_1	Welcome to $teamname!##This is your home screen. You can tap on the division table to view divisions and the schedule.##When you are ready tap the ATHLETICS OFFICE button.
 msg_Intro_1_gp	Welcome to $teamname!##This is your home screen. You can use ² or the - Button to view divisions and the schedule.##When you are ready highlight the ATHLETICS OFFICE button and press ¹.
@@ -337,12 +337,12 @@ choice_IgnoreFine	Ignore#Incident
 choice_FinePlayer	Discipline#Player
 btn_HallOfFame	Yearbook
 ui_HallOfFame	Yearbook
-ui_FavouriteTeam	Favorite College
+ui_FavouriteTeam	Favorite Team
 msg_StoreReview	Would you like to rate and review Retro Bowl College on the store?
-tip_17	Coaching Credit isn't cash, it's kudos - it represents how much respect you have from the faculty, team and fans
-tip_27	If you keep ignoring players' needs put themselves in situations which would end their College Football career!
-tip_29	You can get extra donations to the Scholarship Fund if players declare for the Pro Draft in their Junior year
-tip_30	You can check player GPA on the profile page. If it is low you can arrange for extra tuition in the MEETING area
+tip_17	Now made with 20% more bugs!
+tip_27	This game has been broken over 200 times.
+tip_29	The flying spagetti monster.
+tip_30	Made with love from West Lauderdale
 ui_Alternate	Alt1
 ui_PlayerHallOfFame	Yearbook
 ui_PlayerHallOfFameEmpty	To put players in the Yearbook you need to tag them in the top-left corner of their profile page.
@@ -1019,7 +1019,7 @@ msg_Bench	Do you want to bench $pos $playername until further notice?##Benched p
 
 msg_PreSeasonRankings	Awaiting Pre-Season Poll Results
 
-ui_Credits	Design & Code by Simon Read      ***      Art by @pixelnfl      ***      Music by Heatley Bros      ***      College edition by Five Aces Publishing (Mark Baldwin, Jaime Barrachina Verdia, Andy Clitheroe, John Dennis, Mark Dimond, Jason Gee, Paul Kilburn, Mario Savoia, Chris Welsh), John Holden      ***      Also a huge thank you to Will Thompson and all the league organizers and players!
+ui_Credits	Game by New Star Games      ***      Modded by Gamer Cat      ***      I got hungy      ***      Uhhhhh      ***      Why are you still here?
 
 msg_RemoveFromHallOfFame	Do you want to remove this player from the Yearbook? This cannot be undone.
 ui_Ranked	Rnk
