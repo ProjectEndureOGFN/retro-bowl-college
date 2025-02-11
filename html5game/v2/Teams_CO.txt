@@ -136,18 +136,18 @@ uid	name	tla	conference	division	active	starting	colhelmet	colshirt	colpants	col
 166	J'ville S.	JVS	6	0	1	0	$ffa800	$ffa800	$ffffff	$000000	7	9	0	0	0	0	24	0	0	-1	0	0	AL	y:1:0000
 167	Kennesaw	KSW	38	0	1	0	$ffd799	$996666	$996666	$000000	3	6	0	0	0	0	24	0	0	-1	0	0	GA	y:1:0000
 168	N. Alabama	NAL	37	0	1	0	$000066	$000066	$ffff00	$ffffff	1	5	0	0	0	0	26	0	0	-1	0	0	AL	y:1:0000
-169	S.L. Obispo	SLO	21	0	1	0	$333333	$333333	$ffff00	$ffffff	1	4	0	0	0	0	8	0	0	179	1	0	CA	y:1:0000
-170	E. Wash.	EWA	21	0	1	0	$ffa800	$ffa800	$ffffff	$000000	1	5	0	0	0	0	28	3	0	177	0	0	WA	y:1:0000
-171	Idaho	ID.	21	0	1	0	$ffff00	$000000	$cccccc	$000000	6	8	0	0	0	2	28	5	0	172	0	0	ID	y:1:0000
-172	Idaho S.	IDS	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
-173	Montana	MT.	21	0	1	0	$f00000	$f00000	$ffffff	$ffffff	7	9	0	0	0	0	30	0	0	174	0	0	MT	y:1:0000
-174	Montana S.	MTS	21	0	1	0	$ffff00	$600060	$ffff00	$ffffff	6	10	0	0	0	0	30	0	0	173	0	0	MT	y:1:0000
-175	N. Arizona	NAZ	21	0	1	0	$0000cc	$0000cc	$0000cc	$ffff00	5	4	0	0	0	2	13	0	0	-1	0	0	AZ	y:1:0000
-176	N. Colorado	NCO	21	0	1	0	$ffff00	$996699	$ffff00	$999999	2	3	0	0	0	0	17	0	0	-1	0	0	CO	y:1:0000
-177	Portland S.	P.S	21	0	1	0	$00cc00	$00cc00	$999999	$ffffff	1	4	0	0	0	0	50	0	0	170	0	0	OR	y:1:0000
-178	Sacramento	SAC	21	0	1	0	$009900	$009900	$ffffff	$ffffff	6	10	0	0	0	0	10	0	0	179	0	0	CA	y:1:0000
-179	Cal. D.	C.D	21	0	1	0	$ffff99	$800080	$800080	$ffffff	7	8	0	0	0	0	10	0	0	178	1	0	CA	y:1:0000
-180	Ogden	OGD	21	0	1	0	$0000ff	$cccccc	$0000ff	$cccccc	7	8	0	0	0	0	23	0	0	-1	0	0	UT	y:1:0000
+169	Tuplo	THS	21	0	1	0	$333333	$333333	$ffff00	$ffffff	1	4	0	0	0	0	8	0	0	179	1	0	CA	y:1:0000
+170	Hattiesburg	HSH	21	0	1	0	$ffa800	$ffa800	$ffffff	$000000	1	5	0	0	0	0	28	3	0	177	0	0	WA	y:1:0000
+171	West Point	WPHS	21	0	1	0	$ffff00	$000000	$cccccc	$000000	6	8	0	0	0	2	28	5	0	172	0	0	ID	y:1:0000
+172	Louisville	LSH	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
+173	Starkville	SHS	21	0	1	0	$f00000	$f00000	$ffffff	$ffffff	7	9	0	0	0	0	30	0	0	174	0	0	MT	y:1:0000
+174	Neshoba C.	NCHS	21	0	1	0	$ffff00	$600060	$ffff00	$ffffff	6	10	0	0	0	0	30	0	0	173	0	0	MT	y:1:0000
+175	New Hope	NHHS	21	0	1	0	$0000cc	$0000cc	$0000cc	$ffff00	5	4	0	0	0	2	13	0	0	-1	0	0	AZ	y:1:0000
+176	W. Lauderdale	WLHS	21	0	1	0	$3A3B3C	$fffff	$3A3B3C	$3A3B3C	2	3	0	0	0	0	17	0	0	-1	0	0	CO	y:1:0000
+177	Germantown	GHS	21	0	1	0	$00cc00	$00cc00	$999999	$ffffff	1	4	0	0	0	0	50	0	0	170	0	0	OR	y:1:0000
+178	Warren C.	WCHS	21	0	1	0	$009900	$009900	$ffffff	$ffffff	6	10	0	0	0	0	10	0	0	179	0	0	CA	y:1:0000
+179	Ponototoc C.	PCHS	21	0	1	0	$ffff99	$800080	$800080	$ffffff	7	8	0	0	0	0	10	0	0	178	1	0	CA	y:1:0000
+180	Forest	FHS	21	0	1	0	$0000ff	$cccccc	$0000ff	$cccccc	7	8	0	0	0	0	23	0	0	-1	0	0	UT	y:1:0000
 181	Rhode I. B.	RIB	36	0	1	0	$ffff00	$333333	$ffff00	$ffcc99	4	7	0	0	0	0	39	0	0	-1	0	0	RI	y:1:0000
 182	N.C. Baptist	NCB	35	0	1	0	$ffffff	$ffff00	$ffff00	$000000	5	7	0	0	0	0	26	0	0	-1	0	0	NC	y:1:0000
 183	Charleston S.	CHS	36	0	1	0	$660066	$660066	$660066	$333399	4	3	0	0	0	0	26	0	0	-1	0	0	SC	y:1:0000
@@ -166,7 +166,7 @@ uid	name	tla	conference	division	active	starting	colhelmet	colshirt	colpants	col
 196	Towson	TOW	35	0	1	0	$333333	$333333	$333333	$ffd700	5	3	0	0	0	0	29	0	0	209	0	0	MD	y:1:0000
 197	Phil. Cath.	PHC	35	0	1	0	$2f54a5	$2f54a5	$66ccff	$ffffff	5	5	0	0	0	0	30	0	0	188	1	0	PA	y:1:0000
 198	W'msburg	W.M	35	0	1	0	$ffff00	$009900	$ffff00	$ffffff	7	8	0	0	0	0	29	1	0	194	2	0	VA	y:1:0000
-199	Providence	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
+199	test	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
 200	Manhattan	MAN	24	0	1	0	$ffffff	$99ccff	$ffffff	$99ccff	8	5	0	0	0	0	31	0	0	-1	3	Ivy	NY	y:1:0000
 201	Ithaca	ITH	24	0	1	0	$ff0000	$ff0000	$ffffff	$ffffff	5	4	0	0	0	0	44	0	0	202	3	Ivy	NY	y:1:0000
 202	Hanover	HAN	24	0	1	0	$ffffff	$009900	$ffffff	$336633	8	3	0	0	0	0	38	0	0	201	3	Ivy	NH	y:1:0000
@@ -260,3 +260,19 @@ uid	name	tla	conference	division	active	starting	colhelmet	colshirt	colpants	col
 290	Stephenville	STE	37	0	1	0	$663399	$0000ff	$0000ff	$ffffff	4	7	0	0	0	0	18	0	0	-1	0	0	TX	y:1:0000
 291	Utah T.	UTT	37	0	1	0	$ff0000	$000099	$000099	$ffffff	2	5	0	0	0	0	7	0	0	288	0	0	UT	y:1:0000
 292	N. Jersey M.	NJM	35	0	1	0	$999999	$000099	$000099	$ffffff	3	9	0	0	0	0	33	0	0	-1	0	0	NJ	y:1:0000
+293	Oxford	CHS	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
+294	Grenada	GHS	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
+295	Stone	SHS	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
+296	Houston	HSH	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
+297	Petal	PHS	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
+298	W. Jones	WJHS	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
+299	Canton	CHS	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
+300	Shannon	SHS	21	0	1	0	$ffff00	$333333	$ffff00	$333333	2	1	0	0	0	2	28	5	0	171	0	0	ID	y:1:0000
+301	test1	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
+302	test2	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
+303	test3	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
+304	test4	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
+305	test5	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
+306	test6	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
+308	test7	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
+309	test8	PRO	24	0	1	0	$c0c0c0	$660000	$c0c0c0	$4c3333	3	4	0	0	0	0	39	0	0	193	3	Ivy	RI	y:1:0000
