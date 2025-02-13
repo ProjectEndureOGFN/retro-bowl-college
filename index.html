@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-:root {
+        :root {
             --dark-bg: #0f172a;
             --card-bg: #1e293b;
             --accent: #3b82f6;
@@ -135,35 +134,66 @@
             height: 200px;
             object-fit: cover;
         }
-.achievement-notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: var(--accent);
-    color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    z-index: 1000;
-    animation: slideIn 0.3s ease-out;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
 
-.achievement-content {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+        .achievement-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            z-index: 1000;
+            animation: slideIn 0.3s ease-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
+        .achievement-content {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .fullscreen-game {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            background: black;
+        }
+
+        .close-game {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .game-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         .progress {
             height: 8px;
             border-radius: 4px;
@@ -183,52 +213,9 @@
             margin-right: 0.5rem;
             display: inline-block;
         }
-
-        .play-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-        }
-
-        .user-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        #onlineUsersList {
-            list-style: none;
-            padding: 0;
-            margin-left: 1rem;
-        }
-
-        .online-user {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem;
-            margin-bottom: 0.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            transition: all 0.2s ease;
-        }
-
-        .online-user:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-            margin-bottom: 0.5rem;
-        }
-
-        .nav-link:hover {
-            color: #fff;
-            background: rgba(255, 255, 255, 0.1);
-
     </style>
 </head>
 <body>
-    <!-- Login Form -->
     <div id="loginSection" class="login-content">
         <div class="login-form">
             <h3 class="text-center mb-4">Game Launcher Login</h3>
@@ -259,9 +246,7 @@
         </div>
     </div>
 
-    <!-- Main App (Initially Hidden) -->
     <div id="appSection" class="d-none">
-        <!-- Sidebar -->
         <div class="sidebar">
             <div class="d-flex align-items-center mb-4">
                 <img id="userAvatar" src="/api/placeholder/40/40" alt="User Avatar" class="user-avatar me-3">
@@ -271,28 +256,12 @@
                 </div>
             </div>
 
-            <input type="search" class="form-control mb-4" placeholder="Search games...">
-
             <nav class="nav flex-column">
                 <a href="#" class="nav-link active">
                     <i class="fas fa-home me-2"></i> Home
                 </a>
                 <a href="#" class="nav-link">
-                    <i class="fas fa-gamepad me-2"></i> Library
-                </a>
-                <a href="#" class="nav-link">
-                    <i class="fas fa-store me-2"></i> Store
-                </a>
-                <a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target="#friendsList">
-                    <i class="fas fa-users me-2"></i> Online Users
-                </a>
-                <div id="friendsList" class="collapse">
-                    <ul id="onlineUsersList" class="mt-2">
-                        <!-- Online users will be populated here -->
-                    </ul>
-                </div>
-                <a href="#" class="nav-link">
-                    <i class="fas fa-cog me-2"></i> Settings
+                    <i class="fas fa-trophy me-2"></i> Achievements (<span id="achievementCount">0</span>)
                 </a>
                 <a href="#" class="nav-link" id="logoutButton">
                     <i class="fas fa-sign-out-alt me-2"></i> Logout
@@ -300,372 +269,346 @@
             </nav>
         </div>
 
-        <!-- Main Content -->
         <div class="main-content">
-
-<h3 class="mb-4">Featured Game</h3>
-        
-        <!-- Game Card -->
-        <div class="game-card" onclick="window.location.href='Retrobowlhigh.html'">
-            <img src="https://cdn.glitch.global/fbf114f9-5454-4af7-91cf-d7fbfe32ccae/IMG_0312.jpeg?v=1739287558057" alt="Game Banner" class="game-banner">
-            <div class="game-info">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                    <h4 class="mb-0">Retro Bowl Highschool</h4>
-                    <span class="badge bg-primary">New</span>
-                </div>
-                <div class="game-stats d-flex align-items-center mb-3">
-                    <div class="me-4">
-                        <i class="fas fa-clock me-1"></i> 0 hours played
+            <h3 class="mb-4">Featured Game</h3>
+            
+            <div class="game-card">
+                <img src="/api/placeholder/800/400" alt="Game Banner" class="game-banner">
+                <div class="game-info">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 class="mb-0">Retro Bowl High School</h4>
+                        <span class="badge bg-primary">New</span>
                     </div>
-                    <div class="me-4">
-                        <i class="fas fa-trophy me-1"></i> 0/50 achievements
+                    <div class="game-stats d-flex align-items-center mb-3">
+                        <div class="me-4">
+                            <i class="fas fa-trophy me-1"></i> <span id="achievementsUnlocked">0</span>/50 achievements
+                        </div>
+                        <div>
+                            <i class="fas fa-star me-1"></i> <span id="totalPoints">0</span> points
+                        </div>
                     </div>
-                    <div>
-                        <i class="fas fa-users me-1"></i> Coming Soon players online
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 0%" id="achievementProgress"></div>
                     </div>
-                </div>
-                <div class="progress mb-3">
-                    <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center">
-                    <button class="play-button btn btn-primary">
-                        <i class="fas fa-play me-2"></i> Play Now
-                    </button>
-                    <div class="d-flex align-items-center">
-                        <div class="status-indicator"></div>
-                        <span>Servers Online</span>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-primary play-button">
+                            <i class="fas fa-play me-2"></i> Play Now
+                        </button>
+                        <div class="d-flex align-items-center">
+                            <div class="status-indicator"></div>
+                            <span>Servers Online</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Firebase Scripts -->
+    <div id="gameContainer" class="fullscreen-game d-none">
+        <button class="close-game">
+            <i class="fas fa-times"></i>
+        </button>
+        <iframe id="gameFrame" class="game-iframe" src=""></iframe>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-app-compat.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-auth-compat.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.23.0/firebase-database-compat.min.js"></script>
 
     <script>
-      // Initialize Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyA5JD5ExMsNuPdD8g-YNqYgXOSPU5bTxWY",
-    authDomain: "catlearning-db.firebaseapp.com",
-    databaseURL: "https://catlearning-db-default-rtdb.firebaseio.com",
-    projectId: "catlearning-db",
-    storageBucket: "catlearning-db.firebasestorage.app",
-    messagingSenderId: "458473784166",
-    appId: "1:458473784166:web:5e43cdd59fc429d6457ea7",
-    measurementId: "G-8Y85WV36L1"
-};
+        // Firebase initialization
+        const firebaseConfig = {
+            apiKey: "AIzaSyA5JD5ExMsNuPdD8g-YNqYgXOSPU5bTxWY",
+            authDomain: "catlearning-db.firebaseapp.com",
+            databaseURL: "https://catlearning-db-default-rtdb.firebaseio.com",
+            projectId: "catlearning-db",
+            storageBucket: "catlearning-db.firebasestorage.app",
+            messagingSenderId: "458473784166",
+            appId: "1:458473784166:web:5e43cdd59fc429d6457ea7",
+            measurementId: "G-8Y85WV36L1"
+        };
 
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const database = firebase.database();
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const database = firebase.database();
 
-// Achievement definitions
-const achievements = {
-    firstPlay: {
-        id: 'first_play',
-        title: 'First Steps',
-        description: 'Play your first game',
-        points: 10,
-        icon: 'fa-star'
-    },
-    tenGames: {
-        id: 'ten_games',
-        title: 'Getting Started',
-        description: 'Play 10 games',
-        points: 25,
-        icon: 'fa-trophy'
-    },
-    twentyFiveGames: {
-        id: 'twenty_five_games',
-        title: 'Regular Player',
-        description: 'Play 25 games',
-        points: 50,
-        icon: 'fa-medal'
-    },
-    fiftyGames: {
-        id: 'fifty_games',
-        title: 'Dedicated Player',
-        description: 'Play 50 games',
-        points: 100,
-        icon: 'fa-crown'
-    }
-};
+        // Achievement definitions
+        const achievements = {
+            FIRST_PLAY: {
+                id: 'FIRST_PLAY',
+                title: 'First Steps',
+                description: 'Start your first game',
+                points: 10,
+                icon: 'fa-star'
+            },
+            FIRST_WIN: {
+                id: 'FIRST_WIN',
+                title: 'Victory!',
+                description: 'Win your first game',
+                points: 25,
+                icon: 'fa-trophy'
+            },
+            PERFECT_SEASON: {
+                id: 'PERFECT_SEASON',
+                title: 'Perfect Season',
+                description: 'Win all games in a season',
+                points: 100,
+                icon: 'fa-crown'
+            },
+            TOUCHDOWN_MASTER: {
+                id: 'TOUCHDOWN_MASTER',
+                title: 'Touchdown Master',
+                description: 'Score 5 touchdowns in one game',
+                points: 50,
+                icon: 'fa-football'
+            }
+        };
 
-// User session management
-let currentUser = null;
+        let currentUser = null;
 
-// Auth state observer
-auth.onAuthStateChanged((user) => {
-    if (user) {
-        currentUser = user;
-        document.getElementById('loginSection').classList.add('d-none');
-        document.getElementById('appSection').classList.remove('d-none');
-        
-        // Initialize user data if new user
-        initializeUserData(user.uid);
-        
-        // Update UI with user data
-        updateUserInterface(user.uid);
-        
-        // Set online status
-        updateOnlineStatus(user.uid, true);
-        
-        // Setup disconnect handlers
-        setupDisconnectHandlers(user.uid);
-        
-        // Start listening for achievements
-        startAchievementListeners(user.uid);
-    } else {
-        currentUser = null;
-        document.getElementById('loginSection').classList.remove('d-none');
-        document.getElementById('appSection').classList.add('d-none');
-    }
-});
+        // Auth state observer
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                currentUser = user;
+                document.getElementById('loginSection').classList.add('d-none');
+                document.getElementById('appSection').classList.remove('d-none');
+                initializeUserData(user.uid);
+                updateUserInterface(user.uid);
+            } else {
+                currentUser = null;
+                document.getElementById('loginSection').classList.remove('d-none');
+                document.getElementById('appSection').classList.add('d-none');
+            }
+        });
 
-// Initialize user data
-function initializeUserData(userId) {
-    const userRef = database.ref('users/' + userId);
-    userRef.once('value').then((snapshot) => {
-        if (!snapshot.exists()) {
-            userRef.set({
-                username: auth.currentUser.displayName || 'Player',
-                email: auth.currentUser.email,
-                gamesPlayed: 0,
-                achievements: {},
-                lastPlayed: null,
-                created: firebase.database.ServerValue.TIMESTAMP,
-                settings: {
-                    notifications: true,
-                    theme: 'dark'
+        // Initialize user data
+        function initializeUserData(userId) {
+            const userRef = database.ref('users/' + userId);
+            userRef.once('value').then((snapshot) => {
+                if (!snapshot.exists()) {
+                    userRef.set({
+                        username: auth.currentUser.displayName || 'Player',
+                        email: auth.currentUser.email,
+                        achievements: {},
+                        points: 0,
+                        created: firebase.database.ServerValue.TIMESTAMP
+                    });
                 }
             });
         }
-    });
-}
-
-// Update user interface
-function updateUserInterface(userId) {
-    const userRef = database.ref('users/' + userId);
-    userRef.on('value', (snapshot) => {
-        const userData = snapshot.val();
-        if (userData) {
-            document.getElementById('username').textContent = userData.username;
-            updateAchievementsDisplay(userData.achievements || {});
-            updateGameStats(userData);
-        }
-    });
-}
-
-// Achievement management
-function unlockAchievement(userId, achievementId) {
-    const userAchievementRef = database.ref(`users/${userId}/achievements/${achievementId}`);
-    
-    userAchievementRef.once('value').then((snapshot) => {
-        if (!snapshot.exists()) {
-            const achievement = achievements[achievementId];
-            const unlockData = {
-                title: achievement.title,
-                description: achievement.description,
-                points: achievement.points,
-                unlockedAt: firebase.database.ServerValue.TIMESTAMP,
-                icon: achievement.icon
-            };
+// Achievement system (continued)
+        function unlockAchievement(userId, achievementId) {
+            const userAchievementRef = database.ref(`users/${userId}/achievements/${achievementId}`);
             
-            userAchievementRef.set(unlockData).then(() => {
-                showAchievementNotification(achievement);
-                updateUserPoints(userId, achievement.points);
+            userAchievementRef.once('value').then((snapshot) => {
+                if (!snapshot.exists()) {
+                    const achievement = achievements[achievementId];
+                    const unlockData = {
+                        title: achievement.title,
+                        description: achievement.description,
+                        points: achievement.points,
+                        unlockedAt: firebase.database.ServerValue.TIMESTAMP,
+                        icon: achievement.icon
+                    };
+                    
+                    userAchievementRef.set(unlockData).then(() => {
+                        showAchievementNotification(achievement);
+                        updateUserPoints(userId, achievement.points);
+                        updateAchievementDisplay();
+                    });
+                }
             });
         }
-    });
-}
 
-// Show achievement notification
-function showAchievementNotification(achievement) {
-    const notification = document.createElement('div');
-    notification.className = 'achievement-notification';
-    notification.innerHTML = `
-        <div class="achievement-content">
-            <i class="fas ${achievement.icon}"></i>
-            <div class="achievement-text">
-                <h4>Achievement Unlocked!</h4>
-                <p>${achievement.title}</p>
-                <small>+${achievement.points} points</small>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Animate notification
-    setTimeout(() => {
-        notification.classList.add('show');
-        setTimeout(() => {
-            notification.classList.remove('show');
-            setTimeout(() => notification.remove(), 300);
-        }, 3000);
-    }, 100);
-}
-
-// Update user points
-function updateUserPoints(userId, points) {
-    const userRef = database.ref(`users/${userId}`);
-    userRef.transaction((userData) => {
-        if (userData) {
-            userData.points = (userData.points || 0) + points;
-        }
-        return userData;
-    });
-}
-
-// Game play tracking
-function trackGamePlay(userId) {
-    const userRef = database.ref(`users/${userId}`);
-    userRef.transaction((userData) => {
-        if (userData) {
-            userData.gamesPlayed = (userData.gamesPlayed || 0) + 1;
-            userData.lastPlayed = firebase.database.ServerValue.TIMESTAMP;
+        // Show achievement notification
+        function showAchievementNotification(achievement) {
+            const notification = document.createElement('div');
+            notification.className = 'achievement-notification';
+            notification.innerHTML = `
+                <div class="achievement-content">
+                    <i class="fas ${achievement.icon}"></i>
+                    <div>
+                        <h4 class="mb-1">Achievement Unlocked!</h4>
+                        <p class="mb-0">${achievement.title}</p>
+                        <small>+${achievement.points} points</small>
+                    </div>
+                </div>
+            `;
             
-            // Check for achievements based on games played
-            const gamesPlayed = userData.gamesPlayed;
-            if (gamesPlayed === 1) unlockAchievement(userId, 'firstPlay');
-            if (gamesPlayed === 10) unlockAchievement(userId, 'tenGames');
-            if (gamesPlayed === 25) unlockAchievement(userId, 'twentyFiveGames');
-            if (gamesPlayed === 50) unlockAchievement(userId, 'fiftyGames');
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
         }
-        return userData;
-    });
-}
 
-// Update game stats display
-function updateGameStats(userData) {
-    const statsContainer = document.querySelector('.game-stats');
-    if (statsContainer) {
-        statsContainer.innerHTML = `
-            <div class="me-4">
-                <i class="fas fa-gamepad me-1"></i> ${userData.gamesPlayed || 0} games played
-            </div>
-            <div class="me-4">
-                <i class="fas fa-trophy me-1"></i> ${Object.keys(userData.achievements || {}).length}/${Object.keys(achievements).length} achievements
-            </div>
-            <div>
-                <i class="fas fa-star me-1"></i> ${userData.points || 0} points
-            </div>
-        `;
-    }
-}
-
-// Authentication handlers
-document.getElementById('loginForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-
-    auth.signInWithEmailAndPassword(email, password)
-        .catch((error) => {
-            showError('Login error: ' + error.message);
-        });
-});
-
-document.getElementById('registerForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('registerEmail').value;
-    const password = document.getElementById('registerPassword').value;
-    const username = document.getElementById('registerUsername').value;
-
-    auth.createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            return userCredential.user.updateProfile({
-                displayName: username
-            }).then(() => {
-                initializeUserData(userCredential.user.uid);
+        // Update user points
+        function updateUserPoints(userId, points) {
+            const userRef = database.ref(`users/${userId}`);
+            userRef.transaction((userData) => {
+                if (userData) {
+                    userData.points = (userData.points || 0) + points;
+                }
+                return userData;
             });
-        })
-        .catch((error) => {
-            showError('Registration error: ' + error.message);
+        }
+
+        // Update achievement display
+        function updateAchievementDisplay() {
+            if (!currentUser) return;
+            
+            const userRef = database.ref(`users/${currentUser.uid}`);
+            userRef.once('value').then((snapshot) => {
+                const userData = snapshot.val();
+                const achievements = userData.achievements || {};
+                const achievementCount = Object.keys(achievements).length;
+                const totalAchievements = Object.keys(window.achievements).length;
+                
+                document.getElementById('achievementsUnlocked').textContent = achievementCount;
+                document.getElementById('totalPoints').textContent = userData.points || 0;
+                document.getElementById('achievementCount').textContent = achievementCount;
+                
+                const progressPercent = (achievementCount / totalAchievements) * 100;
+                document.getElementById('achievementProgress').style.width = `${progressPercent}%`;
+            });
+        }
+
+        // Handle game launch
+        document.querySelector('.play-button').addEventListener('click', () => {
+            if (!currentUser) {
+                showError('Please login to play');
+                return;
+            }
+
+            const gameContainer = document.getElementById('gameContainer');
+            const gameFrame = document.getElementById('gameFrame');
+            
+            // Set game URL
+            gameFrame.src = 'Retrobowlhigh.html';
+            
+            // Show game container
+            gameContainer.classList.remove('d-none');
+            
+            // Request fullscreen
+            if (gameContainer.requestFullscreen) {
+                gameContainer.requestFullscreen();
+            }
+
+            // Unlock first play achievement
+            unlockAchievement(currentUser.uid, 'FIRST_PLAY');
         });
-});
 
-// Play button handler
-document.querySelector('.play-button').addEventListener('click', () => {
-    if (currentUser) {
-        trackGamePlay(currentUser.uid);
-        window.location.href = 'Retrobowlhigh.html';
-    } else {
-        showError('Please login to play');
-    }
-});
-
-// Error handling
-function showError(message) {
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'error-notification';
-    errorDiv.textContent = message;
-    document.body.appendChild(errorDiv);
-    setTimeout(() => errorDiv.remove(), 3000);
-}
-
-// Online status management
-function updateOnlineStatus(userId, status) {
-    const statusRef = database.ref(`status/${userId}`);
-    statusRef.set({
-        online: status,
-        lastSeen: firebase.database.ServerValue.TIMESTAMP,
-        username: auth.currentUser.displayName
-    });
-}
-
-function setupDisconnectHandlers(userId) {
-    const statusRef = database.ref(`status/${userId}`);
-    statusRef.onDisconnect().remove();
-}
-
-// Logout handler
-document.getElementById('logoutButton').addEventListener('click', (e) => {
-    e.preventDefault();
-    if (currentUser) {
-        updateOnlineStatus(currentUser.uid, false);
-    }
-    auth.signOut();
-});
-
-// Start achievement listeners
-function startAchievementListeners(userId) {
-    const achievementsRef = database.ref(`users/${userId}/achievements`);
-    achievementsRef.on('child_added', (snapshot) => {
-        const achievement = snapshot.val();
-        showAchievementNotification(achievement);
-    });
-}
-
-// Update online users list
-function updateOnlineUsersList(onlineUsers) {
-    const list = document.getElementById('onlineUsersList');
-    if (!list) return;
-    
-    list.innerHTML = '';
-    if (onlineUsers) {
-        Object.entries(onlineUsers).forEach(([uid, userData]) => {
-            if (userData.online) {
-                const li = document.createElement('li');
-                li.className = 'online-user';
-                li.innerHTML = `
-                    <span class="status-indicator"></span>
-                    <span>${userData.username}</span>
-                `;
-                list.appendChild(li);
+        // Handle game close
+        document.querySelector('.close-game').addEventListener('click', () => {
+            const gameContainer = document.getElementById('gameContainer');
+            const gameFrame = document.getElementById('gameFrame');
+            
+            // Hide game container
+            gameContainer.classList.add('d-none');
+            
+            // Clear game frame
+            gameFrame.src = '';
+            
+            // Exit fullscreen
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
             }
         });
-    }
-}
 
-// Listen for online users
-database.ref('status').on('value', (snapshot) => {
-    updateOnlineUsersList(snapshot.val());
-});
+        // Listen for achievement events from game
+        window.addEventListener('message', (event) => {
+            if (event.data.type === 'ACHIEVEMENT' && currentUser) {
+                unlockAchievement(currentUser.uid, event.data.achievementId);
+            }
+        });
 
+        // Authentication handlers
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            auth.signInWithEmailAndPassword(email, password)
+                .catch((error) => {
+                    showError('Login error: ' + error.message);
+                });
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const username = document.getElementById('registerUsername').value;
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    return userCredential.user.updateProfile({
+                        displayName: username
+                    }).then(() => {
+                        initializeUserData(userCredential.user.uid);
+                    });
+                })
+                .catch((error) => {
+                    showError('Registration error: ' + error.message);
+                });
+        });
+
+        // Toggle authentication forms
+        document.getElementById('toggleAuth').addEventListener('click', (e) => {
+            e.preventDefault();
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const toggleLink = document.getElementById('toggleAuth');
+
+            if (loginForm.classList.contains('d-none')) {
+                loginForm.classList.remove('d-none');
+                registerForm.classList.add('d-none');
+                toggleLink.textContent = "Don't have an account? Register";
+            } else {
+                loginForm.classList.add('d-none');
+                registerForm.classList.remove('d-none');
+                toggleLink.textContent = "Already have an account? Login";
+            }
+        });
+
+        // Logout handler
+        document.getElementById('logoutButton').addEventListener('click', (e) => {
+            e.preventDefault();
+            auth.signOut();
+        });
+
+        // Error handling
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'achievement-notification';
+            errorDiv.style.background = '#ef4444';
+            errorDiv.innerHTML = `
+                <div class="achievement-content">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <div>
+                        <p class="mb-0">${message}</p>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(errorDiv);
+            setTimeout(() => {
+                errorDiv.style.opacity = '0';
+                setTimeout(() => errorDiv.remove(), 300);
+            }, 3000);
+        }
+
+        // Update user interface
+        function updateUserInterface(userId) {
+            const userRef = database.ref('users/' + userId);
+            userRef.on('value', (snapshot) => {
+                const userData = snapshot.val();
+                if (userData) {
+                    document.getElementById('username').textContent = userData.username;
+                    updateAchievementDisplay();
+                }
+            });
+        }
     </script>
 </body>
 </html>
